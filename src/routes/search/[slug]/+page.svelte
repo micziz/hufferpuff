@@ -9,14 +9,18 @@
     }
 
     
-    async function getData() {
-        let res = await fetch(`/api?q=${data.slug}`)
+    async function getData(page: any) {
+        let res = await fetch(`/api?q=${data.slug}&page=${page}`)
         let json: any = await res.json()
         console.log(json)
         return json;
     }
 
-    let promise = getData()
+    let promise = getData('1')
+
+    function reLoad(page: any){
+        promise = getData(page)
+    }
 </script>
 
 {#await promise}
@@ -48,6 +52,23 @@
         <p id="style">{@html result.description}</p>
     {/each}
 {/await}
+
+<button on:click={() => {
+    reLoad('2')
+}}>
+    2
+</button>
+<button on:click={() => {
+    reLoad('3')
+}}>
+    3
+</button>
+
+<button on:click={() => {
+    reLoad('4')
+}}>
+    4
+</button>
 
 <div style="margin-bottom: 2rem;">
 
