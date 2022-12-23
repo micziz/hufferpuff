@@ -1,7 +1,9 @@
+<script>
+	import Title from "../../components/title.svelte";
+
+</script>
 <a href="/">
-    <h1 class="title is-2" id="title">
-        HufferPuff
-    </h1>
+    <Title/>
 </a>
 
 <main>
@@ -36,17 +38,22 @@
         margin-left: 24rem;
         margin-right: 24rem;
         margin-top: 3rem;
+        margin-bottom: 3rem;
     }
     
-    #title{
+    #disclaimer{
         margin-top: 2rem;
-        color: black;
-        text-decoration: none;
     }
     
-    #title:hover{
-        color:black; 
-        text-decoration:none; 
-        cursor:pointer;  
+    #limitations{
+        margin-top: 2rem;
+    }
+    
+    #intellectual-property-rights{
+        margin-top: 2rem;
+    }
+    
+    #governing-law{
+        margin-top: 2rem;
     }
 </style>

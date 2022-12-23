@@ -1,7 +1,7 @@
 <script lang="ts">
     export let data: any;
 
-
+    let pages = ['1', '2', '3', '4', '5']
     let query: string;
 
     async function handleSubmit(){
@@ -12,7 +12,6 @@
     async function getData(page: any) {
         let res = await fetch(`/api?q=${data.slug}&page=${page}`)
         let json: any = await res.json()
-        console.log(json)
         return json;
     }
 
@@ -24,7 +23,7 @@
 </script>
 
 {#await promise}
-<h1 class="title is-2" style="text-align: center; margin-top: 5rem;">Loading</h1>
+    <h1 class="title is-2" style="text-align: center; margin-top: 5rem;">Loading</h1>
 {:then dataX} 
 
 <a href="/">
@@ -51,24 +50,17 @@
         </a>
         <p id="style">{@html result.description}</p>
     {/each}
+    
+    <div id="pagintation">
+        {#each pages as page}
+            <button class="button" id="btns" on:click={() => {
+                reLoad(page)
+            }}>
+                {page}
+            </button>
+        {/each}
+    </div>
 {/await}
-
-<button on:click={() => {
-    reLoad('2')
-}}>
-    2
-</button>
-<button on:click={() => {
-    reLoad('3')
-}}>
-    3
-</button>
-
-<button on:click={() => {
-    reLoad('4')
-}}>
-    4
-</button>
 
 <div style="margin-bottom: 2rem;">
 
@@ -113,5 +105,17 @@
     h1{
         color: black;
         text-decoration: none;
-    } 
+    }
+    
+    #pagintation{
+        margin-top: 2rem;
+    }
+
+    #btns{
+        margin-left: 0.5rem;
+    }
+
+    #btns:hover{
+        background-color: whitesmoke;
+    }    
 </style>

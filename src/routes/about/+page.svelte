@@ -1,3 +1,11 @@
+<script lang="ts">
+	import Title from './../../components/title.svelte';
+</script>
+
+<a href="/">
+    <Title/>
+</a>
+
 <h1 id="h1-1" class="title is-1">We belive in privacy</h1>
 
 <h2 class="title is-5" id="h2-1">No data asked, no data stolen</h2>
@@ -10,7 +18,7 @@
 <style>
     #h1-1{
         text-align: center;
-        margin-top: 9rem;
+        margin-top: 3rem;
     }
     
     #h2-1{
