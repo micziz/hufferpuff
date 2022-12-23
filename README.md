@@ -25,4 +25,3 @@ Build hufferpuff
 ```bash
 npm run build
 ```
-

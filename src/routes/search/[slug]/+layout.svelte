@@ -1,13 +1,9 @@
-
-
-
-
 <div id="textCenter">
-    <slot/>
+	<slot />
 </div>
 
 <style>
-    #textCenter{
-        margin-left: 4rem;
-    }
+	#textCenter {
+		margin-left: 4rem;
+	}
 </style>
