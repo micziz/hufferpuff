@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
     import Title from '../components/title.svelte'
-    let query: string;
+    let query: string = '';
 
     async function handleSubmit(){
         goto(`/search/${query}`)
@@ -11,8 +11,8 @@
 
 <Title />
 
-<div class="formDiv">
-    <form action="" class="" on:submit|preventDefault={handleSubmit}>
+<form action="" class="" on:submit|preventDefault={handleSubmit}>
+    <div class="formDiv">
         <input 
             class="input is-rounded"
             id="input"
@@ -20,22 +20,33 @@
             bind:value={query}
             name="" 
         >
-    </form>
-</div>
+    </div>
+    <div id="inputSubmit">
+        <input id="btns" class="button" type="submit" name="Search" value="Search"/>
+    </div>
+</form>
 
 
 <div id="links">
-    <a href="/about">About - </a> 
-    <a href="/tos">Terms Of Service - </a>
-    <a href="/pp">Privacy policy</a>
+    <span>
+        <a href="/about">About - </a> 
+    </span>
+    <span>
+        <a href="/tos">Terms Of Service - </a>
+    </span>
+    <span>
+        <a href="/pp">Privacy policy</a>
+    </span>
 </div>
 
 <style>
     @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
     
     #links{
-        text-align: center;
-        margin-top: 22rem;
+        position: fixed;     
+        text-align: center;    
+        bottom: 1rem; 
+        width: 100%;
     }
     
     .formDiv{
@@ -60,4 +71,15 @@
         text-decoration:none; 
         cursor:pointer;  
     }
+
+    #inputSubmit{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    #btns:hover{
+        background-color: whitesmoke;
+    }    
 </style>
