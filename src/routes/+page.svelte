@@ -29,13 +29,11 @@
 
 <div id="links">
     <span>
-        <a href="/about">About - </a> 
+        <a href="/about">About</a> 
     </span>
+        -
     <span>
-        <a href="/tos">Terms Of Service - </a>
-    </span>
-    <span>
-        <a href="/pp">Privacy policy</a>
+        <a href="/tos">Terms Of Service</a>
     </span>
 </div>
 
