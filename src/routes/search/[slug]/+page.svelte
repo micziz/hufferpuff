@@ -1,5 +1,12 @@
 <script lang="ts">
+	import { onMount } from "svelte";
+
+
 	export let data: any;
+	let locale: string;
+	onMount(() => {
+		locale = navigator.languages[0]
+	})
 
 	let pages = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
 	let query: string;
@@ -9,8 +16,9 @@
 	}
 
 	async function getData(page: any) {
-		let res = await fetch(`/api?q=${data.slug}&page=${page}`);
+		let res = await fetch(`/api?q=${data.slug}&locale=${locale}&page=${page}`);
 		let json: any = await res.json();
+		console.log(json)
 		return json;
 	}
 
