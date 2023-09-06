@@ -18,13 +18,10 @@ export const GET = (async ({ url }) => {
 	const ip = await getCountry()
 	const marketRegion = await getMarketRegion(ip)
 	const query = String(url.searchParams.get('q') ?? '');
-	const locale = String(url.searchParams.get('locale') ?? 'en-us')
 	const page = Number(url.searchParams.get('page') ?? 1);
 	const searchResults = await search(query, {
 		safeSearch: SafeSearchType.STRICT,
 		marketRegion: marketRegion,
-		locale: locale,
-		region: locale,
 		offset: page
 	});
 	const searchResultsJson = JSON.stringify(searchResults);
