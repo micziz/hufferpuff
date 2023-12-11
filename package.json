@@ -29,6 +29,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"duck-duck-scrape": "^2.2.4"
+		"duck-duck-scrape": "^2.2.5"
 	}
 }

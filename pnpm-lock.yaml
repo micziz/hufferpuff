@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   duck-duck-scrape:
-    specifier: ^2.2.4
-    version: 2.2.4
+    specifier: ^2.2.5
+    version: 2.2.5
 
 devDependencies:
   '@sveltejs/adapter-auto':
@@ -775,8 +775,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /duck-duck-scrape@2.2.4:
-    resolution: {integrity: sha512-5hbMNxKYFQZrykT2heDuLW4smBWDp1jHrTz2ZqaLQMAz/6fgdolgSWpDKWZCd7ZcYHgfvQrmc/cnU7ICuEqQ9Q==}
+  /duck-duck-scrape@2.2.5:
+    resolution: {integrity: sha512-RTu/Ag5LhgD/j1l2zVGCwTINBoEYCffl58nMoBjtXWJG8tTex72h3gxpDjAr8jVqFaBvhgASNKTUsE31JeqYgw==}
     dependencies:
       html-entities: 2.4.0
       needle: 3.2.0
